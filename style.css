@@ -1,0 +1,108 @@
+/* Reseta margens e preenchimentos globais, aplicando a fonte padrão em bloco */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização geral do corpo da página com fundo preto profundo */
+body {
+    background-color: #050505;
+    color: #ff8c00; /* Tom âmbar/laranja inspirado em terminais antigos */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem; /* Fonte aumentada conforme solicitado */
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Simula a tela de um monitor CRT com bordas iluminadas e efeito de scanline */
+.crt-screen {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 3px solid #ff8c00;
+    padding: 2.5rem;
+    background-color: #0a0500;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.2), inset 0 0 15px rgba(255, 140, 0, 0.1);
+    position: relative;
+}
+
+/* Cria o efeito visual de linhas de varredura (scanlines) típicas de tubos de imagem antigos */
+.crt-screen::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none; /* Garante que o efeito não atrapalhe cliques em links */
+}
+
+/* Estilização do cabeçalho do terminal */
+.terminal-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px dashed #ff8c00;
+    padding-bottom: 1rem;
+}
+
+.system-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.terminal-header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+}
+
+/* Estilização de cada seção de conteúdo */
+.terminal-section {
+    margin-bottom: 2rem;
+}
+
+.terminal-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    border-left: 5px solid #ff8c00;
+    padding-left: 0.5rem;
+}
+
+/* Blocos individuais de projetos */
+.project-item {
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-left: 2px dotted rgba(255, 140, 0, 0.4);
+}
+
+.project-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Estilização de links no estilo terminal retrô */
+a {
+    color: #ffb732;
+    text-decoration: underline;
+}
+
+a:hover {
+    background-color: #ff8c00;
+    color: #000;
+}
+
+/* Estilização do rodapé */
+.terminal-footer {
+    border-top: 1px dashed #ff8c00;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
